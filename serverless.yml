@@ -3,7 +3,10 @@ service: notes-app-api
 # Create an optimized package for our functions
 package:
   individually: true
-
+# Create our resources with separate CloudFormation templates
+resources:
+  # API Gateway Errors
+  - ${file(resources/api-gateway-errors.yml)}
 custom:
   # for serverless-bundle -- webpack wrapper
   bundle:
