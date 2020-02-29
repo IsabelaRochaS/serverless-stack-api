@@ -1,0 +1,19 @@
+service: notes-app-api
+
+# Uso do plugin serverless-webpack que transpila o código para ES6
+plugins:
+    - serverless-webpack
+    - serverless-offline
+
+# Configuração do serverless-webpack
+# Habilitar o auto-packing de módulos externos
+custom:
+    webpack:
+        webpackConfig: ./webpack.config.js
+        includeModules: true
+
+provider:
+    name: aws
+    runtime: nodejs8.10
+    stage: prod
+    region: us-east-1
